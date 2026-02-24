@@ -5,7 +5,7 @@
 ## Features
 
 - Copy-paste ready
-- No setup required — just grab and run
+- No setup required - just grab and run
 - Continuously updated
 
 ## Usage
