@@ -1,0 +1,18 @@
+Vagrant.configure("2") do |config|
+    config.vm.define "srv_mint21" do |srv_mint21|
+        srv_mint21.vm.box = "CJJR/LinuxMint21"
+        srv_mint21.vm.hostname = "srv-mint21"
+        
+        srv_mint21.vm.provider "virtualbox" do |vb|
+            vb.name = "srv_mint21"
+            vb.cpus = 1
+            vb.memory = "2048"
+        end
+    
+        srv_mint21.vm.network "public_network"#, ip: "172.22.22.150"
+        
+        srv_mint21.vm.provision "shell", inline: <<-SHELL
+            echo "Linux Mint 21 server successfully configured!"
+        SHELL
+    end
+end

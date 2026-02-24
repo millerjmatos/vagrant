@@ -1,0 +1,22 @@
+Vagrant.configure("2") do |config|
+    config.vm.define "srv_mint22" do |srv_mint22|
+        srv_mint22.vm.box = "aaronvonawesome/linux-mint-22-cinnamon"
+        srv_mint22.vm.hostname = "srv-mint22"
+        
+        srv_mint22.vm.provider "virtualbox" do |vb|
+            vb.name = "srv_mint22"
+            vb.cpus = 1
+            vb.memory = "2048"
+        end
+
+        srv_mint22.vm.network "public_network"
+
+        srv_mint22.ssh.insert_key = false
+        srv_mint22.ssh.private_key_path = ['~/.vagrant.d/insecure_private_key', '~/.ssh/id_rsa']
+        
+        srv_mint22.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+        srv_mint22.vm.provision "shell", inline: <<-SHELL
+            echo "Linux Mint 22 server configured successfully!"
+        SHELL
+    end
+end

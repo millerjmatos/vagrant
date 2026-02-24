@@ -1,0 +1,36 @@
+Vagrant.configure("2") do |config|
+    config.vm.define "srv_ansible01" do |srv_ansible01|
+        srv_ansible01.vm.box = "ubuntu/bionic64"
+        srv_ansible01.vm.hostname = "srv-ansible"
+        
+        srv_ansible01.vm.provider "virtualbox" do |vb|
+            vb.name = "srv_ansible01"
+            vb.cpus = 1
+            vb.memory = "2048"
+        end
+        
+        srv_ansible01.vm.network "public_network", ip: "192.168.0.101"
+        
+        srv_ansible01.vm.provision "shell", inline: <<-SHELL
+            echo "Ansible Server Ubuntu 18.04 configured successfully!"
+        SHELL
+    end
+
+    config.vm.define "srv_ansible02" do |srv_ansible02|
+        srv_ansible02.vm.box = "ubuntu/bionic64"
+        srv_ansible02.vm.hostname = "srv-host.ansible"
+        
+        srv_ansible02.vm.provider "virtualbox" do |vb|
+            vb.name = "srv_ansible02"
+            vb.cpus = 1
+            vb.memory = "2048"
+        end
+        
+        srv_ansible02.vm.network "public_network", ip: "192.168.0.102"
+        
+        srv_ansible02.vm.provision "shell", inline: <<-SHELL
+            echo "Host Server Ubuntu 18.04 configured successfully!"
+        SHELL
+    end
+
+end

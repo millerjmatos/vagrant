@@ -1,0 +1,19 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "srv_oracle9" do |srv_oracle9|
+    srv_oracle9.vm.box = "oraclelinux/9"
+    srv_oracle9.vm.box_url = "https://oracle.github.io/vagrant-projects/boxes/oraclelinux/9.json"
+    srv_oracle9.vm.hostname = "srv-oracle9"
+
+    srv_oracle9.vm.provider "virtualbox" do |vb|
+      vb.name = "srv_oracle9"
+      vb.cpus = 1
+      vb.memory = "4096"
+    end
+
+    srv_oracle9.vm.network "public_network"
+
+    srv_oracle9.vm.provision "shell", inline: <<-SHELL
+      echo "Oracle Linux 9 server configured successfully!"
+    SHELL
+  end
+end
