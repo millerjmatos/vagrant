@@ -2,13 +2,13 @@
 
 > A collection of ready-to-use templates just copy-paste examples.
 
-## :: Features
+## Features
 
 - Copy-paste ready
 - No setup required — just grab and run
 - Continuously updated
 
-## :: Usage
+## Usage
 
 1. Browse the repository folders
 2. Find the template you need
@@ -24,7 +24,7 @@ git clone https://github.com/millerjmatos/vagrant.git
 cd vagrant/<template>
 ```
 
-## :: Prerequisites
+## Prerequisites
 
 1. Git installed on your machine
 2. [Vagrant](https://developer.hashicorp.com/vagrant/install) - required for VM-based templates
