@@ -4,9 +4,9 @@
 
 ## :: Features
 
-- ✓ Copy-paste ready
-- ✓ No setup required — just grab and run
-- ✓ Continuously updated
+- Copy-paste ready
+- No setup required — just grab and run
+- Continuously updated
 
 ## :: Usage
 
