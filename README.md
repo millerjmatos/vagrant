@@ -1,4 +1,4 @@
-# 📋 Templates
+# Templates
 
 > A collection of ready-to-use templates just copy-paste examples.
 
