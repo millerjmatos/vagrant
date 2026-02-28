@@ -22,6 +22,9 @@ cd vagrant/<template>
 
 # Start the virtual machine
 vagrant up
+
+# Connect to the virtual machine
+vagrant ssh
 ```
 
 ## Prerequisites
